@@ -1,6 +1,7 @@
 import { ButtonLink } from "../../components/button";
 import { Container } from "../../components/container";
 import { LayoutBlock } from "../../components/layout-block";
+import Stack from "./stack";
 
 const fnSystem = [
   "Управление нормативно-справочной информацией",
@@ -15,7 +16,7 @@ export const Technologies = () => {
     <LayoutBlock id="technologies" className="py-16 lg:py-20">
       <Container>
         <div className="text-3xl lg:text-4xl mb-8 text-violet-800 font-bold">
-          Наш технический стек
+          Технологический стек
         </div>
         <div className="text-2xl mb-16 text-violet-600 font-bold">
           Combyx — многофункциональная платформа для управления корпоративными данными класса
@@ -59,18 +60,19 @@ export const Technologies = () => {
         </div>
 
         <div className="text-2xl mt-32 mb-4 text-violet-600 font-bold">
-          ViRM единая платформа omni-channel коммуникаций
+          ViRM - единая платформа omni-channel коммуникаций
         </div>
 
         <div className="text-lg font-semibold text-slate-500">
-          ViRM - первая CDP платформа для дистанционных коммуникаций со специалистами
-          здравоохранения
+          Первая CDP платформа для дистанционных коммуникаций со специалистами здравоохранения
         </div>
         <img src="/technologies/ViRM.png" alt="" className="mx-auto md:mx-0 max-w-sm w-full my-7" />
         <ButtonLink href="https://virm.online/" target="_blank">
           Подробнее
         </ButtonLink>
       </Container>
+
+      <Stack />
     </LayoutBlock>
   );
 };

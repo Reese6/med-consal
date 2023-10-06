@@ -1,5 +1,5 @@
-import { Fragment } from "react";
 import { Container } from "../../components/container";
+import { FeedbackForm } from "./feedback-form";
 
 const contacts = [
   {
@@ -59,19 +59,22 @@ export const Contacts = () => {
       id="contacts"
       className="bg-gradient-to-b from-violet-800 to-indigo-800 py-16 lg:py-20">
       <Container>
-        <div className="text-3xl lg:text-4xl mb-16 text-white font-bold">Связаться с нами</div>
-        <div className="flex justify-between flex-wrap gap-10">
-          <div className="grid grid-cols-[auto_1fr] gap-5 max-w-md lg:max-w-xl items-start">
-            {contacts.map((item, i) => (
-              <Fragment key={i}>
-                <div className="text-lg text-white font-medium flex items-center gap-3">
-                  {item.icon}
-                  <span>{item.label}:</span>
+        <div className="flex justify-between flex-col lg:flex-row gap-10">
+          <div className="lg:max-w-md flex flex-col flex-1">
+            <div className="text-3xl lg:text-4xl mb-16 text-white font-bold">Связаться с нами</div>
+            <div className="flex flex-1 flex-col gap-5">
+              {contacts.map((item, i) => (
+                <div key={i} className="flex items-start gap-4">
+                  <div className="text-lg text-white font-medium flex items-center gap-3">
+                    {item.icon}
+                    <span>{item.label}:</span>
+                  </div>
+                  <div className="text-lg text-white font-semibold">{item.value}</div>
                 </div>
-                <div className="text-lg text-white font-semibold">{item.value}</div>
-              </Fragment>
-            ))}
+              ))}
+            </div>
           </div>
+          <FeedbackForm />
         </div>
       </Container>
     </section>

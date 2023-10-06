@@ -1,19 +1,40 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { Container } from "../../components/container";
+import cn from "classnames";
 
 const menu = [
   { id: "home", label: "Главная" },
   { id: "services", label: "Услуги" },
   { id: "technologies", label: "Технологии" },
+  { id: "contacts", label: "Контакты" },
 ];
 
 export const Header = () => {
   const [showSidebar, setShowSidebar] = useState(false);
+  const [withShadow, setShadow] = useState(false);
+
+  const ref = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const fn = () => {
+      setShadow(document.documentElement.scrollTop > 1);
+    };
+    document.addEventListener("scroll", fn);
+
+    return () => {
+      document.removeEventListener("scroll", fn);
+    };
+  }, []);
 
   return (
     <>
-      <header className="bg-white py-2 md:px-24">
+      <header
+        ref={ref}
+        className={cn(
+          "bg-white py-2 md:px-24 fixed inset-x-0 top-0 z-30",
+          withShadow && "shadow-lg",
+        )}>
         <Container className="flex items-center justify-between">
           <a href="/" className="inline-flex">
             <img src="/logotype-full.png" className="w-20 md:w-28" />
@@ -60,7 +81,8 @@ export const Header = () => {
                     <a
                       key={item.id}
                       href={`#${item.id}`}
-                      className="block text-center text-lg font-semibold text-slate-800">
+                      className="block text-center text-lg font-semibold text-slate-800"
+                      onClick={() => setShowSidebar(false)}>
                       {item.label}
                     </a>
                   ))}

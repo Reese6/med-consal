@@ -31,7 +31,9 @@ export const Card = ({ title, icon, description }: Props) => {
             <Dialog.Content className="bg-white relative p-9 overflow-y-auto max-w-md w-full rounded-2xl">
               <div className="text-lg md:text-xl text-slate-900 font-bold mb-4">{title}</div>
               <div className="text-sm md:text-base text-slate-700 font-semibold">{description}</div>
-              <button onClick={() => setShowModal(false)} className="absolute top-4 right-4">
+              <button
+                onClick={() => setShowModal(false)}
+                className="absolute outline-none top-4 right-4">
                 <svg
                   className="w-5 h-5 fill-slate-800"
                   xmlns="http://www.w3.org/2000/svg"

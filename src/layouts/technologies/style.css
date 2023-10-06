@@ -1,0 +1,51 @@
+.slide-container {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 96px;
+}
+
+@keyframes logoSlide {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(2rem);
+  }
+}
+
+.slide-row {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100vw;
+  gap: 2rem;
+  position: relative;
+}
+.slide-row::after,
+.slide-row::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 48px;
+}
+.slide-row::after {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+  right: 0;
+}
+.slide-row::before {
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+  left: 0;
+}
+
+.slide-chunk {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  gap: 2rem;
+  animation: 30s logoSlide infinite linear;
+}
+
+.slide-chunk-reverse {
+  animation-direction: reverse;
+}
