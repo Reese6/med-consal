@@ -67,7 +67,7 @@ export const Contacts = () => {
                 <div key={i} className="flex items-start gap-4">
                   <div className="text-lg text-white font-medium flex items-center gap-3">
                     {item.icon}
-                    <span>{item.label}:</span>
+                    <span className="whitespace-nowrap">{item.label}:</span>
                   </div>
                   <div className="text-lg text-white font-semibold">{item.value}</div>
                 </div>

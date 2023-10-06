@@ -8,7 +8,7 @@ const fnSystem = [
   "Управление моделью мета-данных предприятия",
   "Каталог данных и бизнес-глоссарий",
   "Интеграция корпоративных систем",
-  "Управление правилами обработки данных, их валидации и дедубликации и т.д.",
+  "Управление правилами обработки данных, их валидации, дедубликации и пр.",
 ];
 
 export const Technologies = () => {
@@ -60,11 +60,8 @@ export const Technologies = () => {
         </div>
 
         <div className="text-2xl mt-32 mb-4 text-violet-600 font-bold">
-          ViRM - единая платформа omni-channel коммуникаций
-        </div>
-
-        <div className="text-lg font-semibold text-slate-500">
-          Первая CDP платформа для дистанционных коммуникаций со специалистами здравоохранения
+          ViRM - первая CDP платформа для дистанционных коммуникаций со специалистами
+          здравоохранения
         </div>
         <img src="/technologies/ViRM.png" alt="" className="mx-auto md:mx-0 max-w-sm w-full my-7" />
         <ButtonLink href="https://virm.online/" target="_blank">
