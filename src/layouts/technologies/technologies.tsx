@@ -63,7 +63,7 @@ export const Technologies = () => {
           ViRM - первая CDP платформа для дистанционных коммуникаций со специалистами
           здравоохранения
         </div>
-        <img src="/technologies/ViRM.png" alt="" className="mx-auto md:mx-0 max-w-sm w-full my-7" />
+        <img src="/technologies/ViRM.svg" alt="" className="mx-auto md:mx-0 max-w-sm w-full my-7" />
         <ButtonLink href="https://virm.online/" target="_blank">
           Подробнее
         </ButtonLink>
