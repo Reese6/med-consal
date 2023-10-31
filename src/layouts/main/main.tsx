@@ -1,11 +1,11 @@
 import { ButtonLink } from "../../components/button";
 import { Container } from "../../components/container";
+import { ScrollToBlock } from "../../components/scroll-to-block";
 
 export const Main = () => {
   return (
-    <main
-      id="home"
-      className="py-12 lg:py-24 flex flex-col bg-right-bottom bg-no-repeat bg-contain md:bg-[url(/fggg.jpg)]">
+    <main className="py-12 lg:py-24 relative flex flex-col bg-right-bottom bg-no-repeat bg-contain md:bg-[url(/fggg.jpg)]">
+      <ScrollToBlock id="home" />
       <Container className="flex flex-col items-center md:flex-row justify-between gap-10">
         <div className="w-full max-w-xl">
           <h1 className="font-semibold text-3xl text-slate-900 md:text-4xl md:font-bold">

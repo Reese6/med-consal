@@ -1,5 +1,6 @@
 import { Container } from "../../components/container";
 import { LayoutBlock } from "../../components/layout-block";
+import { ScrollToBlock } from "../../components/scroll-to-block";
 import { Card } from "./card";
 
 const config = [
@@ -43,9 +44,8 @@ const config = [
 
 export const Services = () => {
   return (
-    <LayoutBlock
-      id="services"
-      className="bg-gradient-to-b from-[#6733e2] to-violet-800 py-16 lg:py-20">
+    <LayoutBlock className="bg-gradient-to-b relative from-[#6733e2] to-violet-800 py-16 lg:py-20">
+      <ScrollToBlock id="services" />
       <Container>
         <div className="text-xl lg:text-3xl mb-24 text-white font-bold text-center">
           Мы понимаем фармацевтический бизнес и проблемы, говорим на одном языке и предлагаем лучший

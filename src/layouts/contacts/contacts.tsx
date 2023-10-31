@@ -1,4 +1,5 @@
 import { Container } from "../../components/container";
+import { ScrollToBlock } from "../../components/scroll-to-block";
 import { FeedbackForm } from "./feedback-form";
 
 const contacts = [
@@ -35,9 +36,8 @@ const contacts = [
 
 export const Contacts = () => {
   return (
-    <section
-      id="contacts"
-      className="bg-gradient-to-b from-violet-800 to-indigo-800 py-16 lg:py-20">
+    <section className="bg-gradient-to-b relative from-violet-800 to-indigo-800 py-16 lg:py-20">
+      <ScrollToBlock id="contacts" />
       <Container>
         <div className="flex justify-between flex-col lg:flex-row gap-10">
           <div className="lg:max-w-md flex flex-col flex-1">

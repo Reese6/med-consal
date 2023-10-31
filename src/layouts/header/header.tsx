@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, MouseEvent } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { Container } from "../../components/container";
 import cn from "classnames";
@@ -52,7 +52,8 @@ export const Header = () => {
                 <a
                   key={item.id}
                   href={`#${item.id}`}
-                  className="block text-center text-lg font-semibold text-slate-800 hover:text-blue-700 transition-colors duration-300">
+                  className="block text-center text-lg font-semibold text-slate-800 hover:text-blue-700 transition-colors duration-300"
+                  onClick={(e) => scrollToBlock(e, item.id)}>
                   {item.label}
                 </a>
               ))}
@@ -63,9 +64,12 @@ export const Header = () => {
       {showSidebar && (
         <Dialog.Root open={showSidebar} onOpenChange={setShowSidebar}>
           <Dialog.Portal>
-            <section className="fixed md:hidden inset-0 bg-black bg-opacity-40">
-              <Dialog.Overlay className="absolute inset-o z-10" />
-              <div className="bg-white absolute right-0 inset-y-0 pt-5 px-8 h-full overflow-y-auto w-72">
+            <section className="fixed md:hidden inset-0 bg-black bg-opacity-40 z-40">
+              <Dialog.Overlay
+                className="absolute inset-0 z-10"
+                onClick={() => setShowSidebar(false)}
+              />
+              <div className="bg-white absolute right-0 inset-y-0 pt-5 px-8 h-full overflow-y-auto w-72 z-20">
                 <div className="flex justify-end mb-5">
                   <button onClick={() => setShowSidebar(false)}>
                     <svg
@@ -82,7 +86,7 @@ export const Header = () => {
                       key={item.id}
                       href={`#${item.id}`}
                       className="block text-center text-lg font-semibold text-slate-800"
-                      onClick={() => setShowSidebar(false)}>
+                      onClick={(e) => scrollToBlock(e, item.id)}>
                       {item.label}
                     </a>
                   ))}
@@ -95,3 +99,11 @@ export const Header = () => {
     </>
   );
 };
+
+function scrollToBlock(e: MouseEvent<HTMLAnchorElement>, id: string) {
+  e.preventDefault();
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth" });
+  }
+}

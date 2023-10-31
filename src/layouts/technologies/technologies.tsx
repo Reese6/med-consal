@@ -1,6 +1,7 @@
 import { ButtonLink } from "../../components/button";
 import { Container } from "../../components/container";
 import { LayoutBlock } from "../../components/layout-block";
+import { ScrollToBlock } from "../../components/scroll-to-block";
 import Stack from "./stack";
 
 const fnSystem = [
@@ -13,7 +14,8 @@ const fnSystem = [
 
 export const Technologies = () => {
   return (
-    <LayoutBlock id="technologies" className="py-16 lg:py-20">
+    <LayoutBlock className="py-16 relative lg:py-20">
+      <ScrollToBlock id="technologies" />
       <Container>
         <div className="text-3xl lg:text-4xl mb-8 text-violet-800 font-bold">
           Технологический стек
