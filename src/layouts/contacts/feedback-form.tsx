@@ -13,6 +13,7 @@ export const FeedbackForm = () => {
     <form
       className="bg-white p-4 md:p-10 rounded-xl shadow-xl lg:max-w-xl w-full"
       action="/"
+      onSubmit={(e) => e.preventDefault()}
       method="post">
       <div className=" text-slate-800 text-xl font-bold mb-8">
         Оставьте заявку и мы c Вами свяжемся
