@@ -32,12 +32,15 @@ export const Header = () => {
       <header
         ref={ref}
         className={cn(
-          "bg-white py-2 md:px-24 fixed inset-x-0 top-0 z-30",
+          "bg-white py-2 lg:px-24 fixed inset-x-0 top-0 z-30",
           withShadow && "shadow-lg",
         )}>
-        <Container className="flex items-center justify-between">
+        <Container className="flex items-center justify-between gap-8">
           <a href="/" className="inline-flex">
-            <img src="/logotype-full.png" className="w-20 md:w-28" />
+            <img
+              src="/MTK_logo_horizont.png"
+              className="h-12 max-w-full object-contain object-left"
+            />
           </a>
           <div className="flex gap-5">
             <button className="md:hidden" onClick={() => setShowSidebar(true)}>
@@ -86,7 +89,10 @@ export const Header = () => {
                       key={item.id}
                       href={`#${item.id}`}
                       className="block text-center text-lg font-semibold text-slate-800"
-                      onClick={(e) => scrollToBlock(e, item.id)}>
+                      onClick={(e) => {
+                        setShowSidebar(false);
+                        scrollToBlock(e, item.id);
+                      }}>
                       {item.label}
                     </a>
                   ))}

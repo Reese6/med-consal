@@ -7,6 +7,7 @@ import { Technologies } from "./layouts/technologies";
 function App() {
   return (
     <>
+      <div className="pt-[68px] md:pt-[88px]" />
       <Header />
       <Main />
       <Services />

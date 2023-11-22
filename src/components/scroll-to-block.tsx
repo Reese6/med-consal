@@ -3,5 +3,5 @@ type Props = {
 };
 
 export const ScrollToBlock = ({ id }: Props) => {
-  return <div id={id} className="absolute top-[-88px] opacity-0" />;
+  return <div id={id} className="absolute top-[-68px] md:top-[-88px] opacity-0" />;
 };
